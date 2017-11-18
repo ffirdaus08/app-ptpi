@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mantra - Component</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link href="font/awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="css/ngWig/ng-wig.css" rel="stylesheet" type="text/css"/>
+        <link href="css/ngWig/colorpicker.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/ngWig/angular.min.js"></script>
+        <script src="js/ngWig/ng-wig.js"></script>
+        <script src="js/ngWig/format.ng-wig.js"></script>
+        <script src="js/ngWig/bootstrap-colorpicker-module.min.js"></script>
+        <script src="js/ngWig/forecolor.ng-wig.js"></script>
+        <script src="js/ngWig/clearstyle.ng-wig.js"></script>
+    </head>
+    <body ng-app="componentApp">
+        <section id="body">
+            <aside id="sidebar">
+                <header id="headline">
+                    <h1><a href="#"><i class="fa fa-superpowers" aria-hidden="true"></i> Project Mantra</a></h1>
+                    <h3>Feel mantra on your project</h3>
+                    <div class="status">
+                        <label>Happy</label>
+                        <label>&nbsp; | &nbsp;</label>
+                        <a href="#">Logout</a>
+                    </div>
+                </header>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Feature</a>
+                            <ul class="submenu">
+                                <li><a href="article.html">Article</a></li>
+                                <li><a href="component.html">Component</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <section id="content">
+                <article>
+                    <h3>Components on Mantra</h3>
+                    <div class="article-info">
+                        Posted on
+                        <time datetime="2013-05-14">10 July</time>
+                    </div>
+
+                    <form ng-controller="wigController">
+                        <fieldset>
+                            <legend>Fieldset</legend>
+                            <p>
+                                <label>Basic Textfield</label>
+                                <input type="text" placeholder="basic textfield"/>
+                            </p>
+                            <p>
+                                <label>Number Textfield</label>
+                                <input type="number" placeholder="intbox"/>
+                            </p>
+                            <p>
+                                <label>Password</label>
+                                <input type="password" placeholder="password field"/>
+                            </p>
+                            <p>
+                                <label>Selector</label>
+                                <select>
+                                    <option>Java</option>
+                                    <option>Python</option>
+                                    <option>Go</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label>Checkbox</label>
+                                <input type="checkbox" id="cb-test"/>
+                                <label for="cb-test">checked</label>
+                            </p>
+                            <p>
+                                <label>Radio</label>
+                                <label for="rd-java" class="radio" >
+                                    <input id="rd-java" type="radio" name="lang"/>
+                                    <span>Java</span>
+                                </label>
+                                <label for="rd-python" class="radio">
+                                    <input id="rd-python" type="radio" name="lang"/>
+                                    <span>Python</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>Textarea</label>
+                                <textarea type="text" placeholder="Textarea"></textarea>
+                            </p>
+                            <p>
+                                <table>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Language</th>
+                                        <th>Vote</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Java</td>
+                                        <td>24769</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Python</td>
+                                        <td>23987</td>
+                                    </tr>
+                                </table>
+                            </p>
+                            <p>
+                                <ng-wig ng-model="isi"></ng-wig>
+
+                            </p>
+                            <p>
+                                <button type="button" ng-click="show()">Submit</button>
+                            </p>
+                        </fieldset>
+                    </form>
+
+                </article>
+                <footer>
+                    <p>Copyright 2016 <a href="#">Happy Indra Wijaya</a></p>
+                </footer>
+            </section>
+        </section>
+        <script>
+            angular.module('componentApp', ['ngWig', 'colorpicker.module']).controller('wigController', ['$http', '$scope',
+                function ($http, $scope) {
+
+                    var ctrl = this;
+                    this.$onInit = function() {
+                        ctrl.instructions = '';
+                        ctrl.placeholder = 'placeholder';
+
+                    }
+
+                    $scope.show = function() {
+                        alert($scope.isi);
+                    }
+
+
+                }]
+            );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="{{ url_for('static', filename='js/customer.js') }}"></script>
+<form ng-controller="customerController" data-ng-init="init()">
+    <fieldset>
+        <legend>Customer Form</legend>
+
+        <button type="button" ng-click="new()">
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; New Customer
+        </button>
+        <br/>
+        <br/>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>title</th>
+                <th>Company</th>
+                <th>Mobilephone</th>
+                <th>Detail</th>
+            </tr>
+            {% raw %}
+            <tr ng-repeat="row in customers">
+                <td ng-bind="row.name"></td>
+                <td ng-bind="row.title"></td>
+                <td ng-bind="getCompanyById(row.company_id)"></td>
+                <td ng-bind="row.mobile_phone"></td>
+                <td><a href="#" ng-click="detail($index)">Detail</a></td>
+            </tr>
+            {% endraw %}
+
+        </table>
+        <br/>
+
+        <div id="pn-input">
+
+            <p>
+                <label>Name</label>
+                <input id="tx-customer-name" type="text" placeholder="name" maxlength="50" required/>
+            </p>
+            <p>
+                <label>Status</label>
+
+                <label for="rd-mr" class="radio">
+                    <input id="rd-mr" type="radio" name="status" checked="checked"/>
+                    <span>Mr.</span>
+                </label>
+                <label for="rd-mrs" class="radio">
+                    <input id="rd-mrs" type="radio" name="status"/>
+                    <span>Mrs.</span>
+                </label>
+                <label for="rd-ms" class="radio">
+                    <input id="rd-ms" type="radio" name="status"/>
+                    <span>Ms.</span>
+                </label>
+            </p>
+            <p>
+                <label>Title Job</label>
+                <input id="tx-title" type="text" placeholder="title">
+            </p>
+            <p>
+                <label>Title Category</label>
+                <input id="tx-title-category" type="text" placeholder="fill with a number">
+            </p>
+            <p>
+                <label>Eselon</label>
+                <select id="tx-eselon">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </p>
+            <p>
+                <label>Mobile-Phone</label>
+                <input id="tx-mobile-phone" type="number" placeholder="628......">
+            </p>
+            <p>
+                <label>Private Email</label>
+                <input id="tx-private-mail" type="text" placeholder="......@mail.com">
+            </p>
+            <p>
+                <label>Company</label>
+                {% raw %}
+                <select id="tx-company-id">
+                    <option ng-repeat="row in companies" value="{{ row.id }}">{{ row.name}}</option>
+                </select>
+                {% endraw %}
+            </p>
+
+
+            <p>
+                <button id="bt-event" type="button" ng-click="showEvent()">Add Event</button>
+            </p>
+
+
+            <p>
+                <button type="button" ng-click="save()">Save</button>
+                <button type="button" ng-click="delete()">delete</button>
+                <button type="button" ng-click="clear()">Cancel</button>
+            </p>
+        </div>
+
+    </fieldset>
+    <!-- The Modal -->
+    <div id="modal-kuisioner" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>
+                <label>Event</label>
+                {% raw %}
+                <select id="tx-event-id">
+                    <option ng-repeat="row in events" value="{{ row.id }}">{{ row.title}}</option>
+                </select>
+                {% endraw %}
+            </p>
+            <br/>
+            <p><label>Source</label>
+                <input id="tx-source" type="text" placeholder="Fast Lane / Registration"></p>
+            <p><label>Kode Tiket</label>
+                <input id="tx-kode-tiket" type="text" placeholder="PG / S /AB "></p>
+            <p><label>Visitting Interest</label>
+                <input id="tx-list-visit" type="text" placeholder="1,2,3,4"></p>
+            <p><label>Product Interest</label>
+                <input id="tx-list-product" type="text" placeholder="1,2,3,4"></p>
+
+            <p>
+                <button type="button" ng-click="addEvent()">Save</button>
+                <button type="button" ng-click="closeEvent()">Cancel</button>
+            </p>
+        </div>
+
+    </div>
+</form>
+{% endblock %}

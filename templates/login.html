@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <div ng-controller="loginController">
+        <fieldset>
+            <legend>Login</legend>
+            <form id="form-login">
+                <p>
+                    <label for="tx-user">Username</label>
+                    <input id="tx-user" type="text" value=""
+                           ng-keyup="$event.keyCode == 13 ? login() : null"/>
+                </p>
+                <p>
+                    <label for="tx-pass">Password</label>
+                    <input id="tx-pass" type="password" value=""
+                           ng-keyup="$event.keyCode == 13 ? login() : null"/>
+                </p>
+                <p>
+                    <button type="button" ng-click="login()">Login</button>
+                </p>
+            </form>
+        </fieldset>
+    </div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="{{ url_for('static', filename='js/company.js') }}"></script>
+<form ng-controller="companyController" data-ng-init="init()">
+    <fieldset>
+        <legend>Company Form</legend>
+
+        <button type="button" ng-click="new()">
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; New Company
+        </button>
+        <br/>
+        <br/>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Line Business</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Detail</th>
+            </tr>
+            <tr ng-repeat="row in companies">
+                <td ng-bind="row.id"></td>
+                <td ng-bind="row.name"></td>
+                <td ng-bind="row.line_business"></td>
+                <td ng-bind="row.city"></td>
+                <td ng-bind="row.phone"></td>
+                <td><a href="#" ng-click="detail($index)">Detail</a></td>
+            </tr>
+
+        </table>
+        <br/>
+
+        <div id="pn-input">
+            <p>
+                <label>Company Name</label>
+                <input id="tx-company-name" type="text" placeholder="PAMERINDO INDONESIA PT"/>
+            </p>
+            <p>
+                <label>Address</label>
+                <input id="tx-address" type="text" placeholder="Address"/>
+            </p>
+            <p>
+                <label>City</label>
+                <input id="tx-city" type="text" placeholder="Jakarta Selatan"/>
+            </p>
+            <p>
+                <label>Zipcode</label>
+                <input id="tx-zipcode" type="text" placeholder="12310"/>
+            </p>
+            <p>
+                <label>Province</label>
+                <input id="tx-province" type="text" placeholder="DKI Jakarta"/>
+            </p>
+            <p>
+                <label>Country</label>
+                <input id="tx-country" type="text" placeholder="Indonesia"/>
+            </p>
+            <p>
+                <label>Phone</label>
+                <input id="tx-phone" type="text" placeholder="6221 ....">
+            </p>
+            <p>
+                <label>Fax</label>
+                <input id="tx-fax" type="text" placeholder="6221 ....">
+            </p>
+            <p>
+                <label>Email</label>
+                <input id="tx-email" type="text" placeholder="......@mail.com">
+            </p>
+            <p>
+                <label>Homepage</label>
+                <input id="tx-homepage" type="text" placeholder="www.pamerindoindonesia.com">
+            </p>
+            <p>
+                <label>Holding</label>
+                <input id="tx-holding" type="text" placeholder="example: UBM PT">
+            </p>
+            <p>
+                <label>Associate</label>
+                <input id="tx-associate" type="text" placeholder="Trade Assocsiacon">
+            </p>
+            <p>
+                <label>Brand</label>
+                <input id="tx-brand" type="text" placeholder="Pameran Indonesia">
+            </p>
+            <p>
+                <label>Product</label>
+                <input id="tx-product" type="text" placeholder="Pameran Indonesia">
+            </p>
+            <p>
+                <label>Line Business</label>
+                <input id="tx-line-business" type="text" placeholder="Pameran/Event Organizer">
+            </p>
+
+            <p>
+                <button type="button" ng-click="save()">Save</button>
+                <button type="button" ng-click="delete()">delete</button>
+                <button type="button" ng-click="clear()">Cancel</button>
+            </p>
+        </div>
+
+    </fieldset>
+</form>
+{% endblock %}
