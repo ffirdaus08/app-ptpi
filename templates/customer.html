@@ -56,11 +56,13 @@
             </p>
             <p>
                 <label>Title Job</label>
-                <input id="tx-title" type="text" placeholder="title">
+                <input id="tx-title" type="text" placeholder="title"
+                ng-keyup="$event.keyCode == 13 ? getScJob($event) : null"/>
             </p>
             <p>
                 <label>Title Category</label>
-                <input id="tx-title-category" type="text" placeholder="fill with a number">
+                <input id="tx-title-category" type="text" placeholder="fill with a number"
+                ng-keyup="$event.keyCode == 13 ? getShortcut($event) : null"/>
             </p>
             <p>
                 <label>Eselon</label>

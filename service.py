@@ -70,6 +70,21 @@ def save_customer(customer):
 
         dbs.add(customer)
         dbs.commit()
+
+        # update kpi
+        user_id = customer.user_id
+        current_kpi = UserKpi.query.filter(UserKpi.date == now()).filter(UserKpi.user_id == user_id).first()
+        if current_kpi is None:
+            current_kpi = UserKpi()
+            current_kpi.user_id = user_id
+            current_kpi.date = now()
+            current_kpi.total = 1
+            dbs.add(current_kpi)
+            dbs.commit()
+        else:
+            current_kpi.total = current_kpi.total + 1
+            dbs.commit()
+
     else:
         current_id = customer.id
         cc = Customer.query.filter(Customer.id == current_id).first()
@@ -114,10 +129,6 @@ def add_event_to_customer(customer_id, event_id, survey_data):
         current_survey.list_visit_interest = survey_data.list_visit_interest
         current_survey.list_product_interest = survey_data.list_product_interest
         dbs.commit()
-
-
-
-
 
 
 

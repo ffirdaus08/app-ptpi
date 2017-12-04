@@ -43,7 +43,8 @@
             </p>
             <p>
                 <label>City</label>
-                <input id="tx-city" type="text" placeholder="Jakarta Selatan"/>
+                <input id="tx-city" type="text" placeholder="Jakarta Selatan"
+                    ng-keyup="$event.keyCode == 13 ? getShortcut($event) : null"/>
             </p>
             <p>
                 <label>Zipcode</label>
@@ -51,7 +52,8 @@
             </p>
             <p>
                 <label>Province</label>
-                <input id="tx-province" type="text" placeholder="DKI Jakarta"/>
+                <input id="tx-province" type="text" placeholder="DKI Jakarta"
+                ng-keyup="$event.keyCode == 13 ? getShortcut($event) : null"/>
             </p>
             <p>
                 <label>Country</label>
@@ -91,7 +93,8 @@
             </p>
             <p>
                 <label>Line Business</label>
-                <input id="tx-line-business" type="text" placeholder="Pameran/Event Organizer">
+                <input id="tx-line-business" type="text" placeholder="Pameran/Event Organizer"
+                ng-keyup="$event.keyCode == 13 ? getSclinebusiness($event) : null"/>
             </p>
 
             <p>

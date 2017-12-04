@@ -213,5 +213,120 @@ angular.module('baseApp').controller('companyController', ['$http', '$scope',
             }
         }
 
+
+        $scope.getShortcut = function($event) {
+            var target = $event.currentTarget;
+            var inputKey = target.value;
+
+            for(var i=0; i < $scope.shortcut.length; i++){
+                var sc = $scope.shortcut[i];
+                if(sc.key === inputKey){
+
+                    txCity.value = sc.city;
+                    txProvince.value = sc.province;
+                    txCountry.value = sc.country;
+
+                    return;
+                }
+            }
+        };
+
+
+         $scope.getSclinebusiness = function($event) {
+            var target = $event.currentTarget;
+            var inputKey = target.value;
+
+            for(var i=0; i < $scope.shortcut.length; i++){
+                var sc = $scope.sclinebusiness[i];
+                if(sc.key === inputKey){
+
+                    txLineBusiness.value = sc.line_business;
+
+
+                    return;
+                }
+            }
+        };
+
+
+
+
+//        SHORTCUT KEY ----------------------------------
+        $scope.shortcut = [     // region
+            {key: 'bl', city: 'Balikpapan', province: 'Kalimantan Timur', country: 'Indonesia'},
+            {key: 'bn', city: 'Bandar Lampung', province: 'Lampung', country: 'Indonesia'},
+            {key: 'bd', city: 'Bandung', province: 'Jawa Barat', country: 'Indonesia'},
+            {key: 'bj', city: 'Banjarmasin', province: 'Kalimantan Selatan', country: 'Indonesia'},
+            {key: 'bk', city: 'Bekasi', province: 'Jawa Barat', country: 'Indonesia'},
+            {key: 'bg', city: 'Bogor', province: 'Jawa Barat', country: 'Indonesia'},
+            {key: 'dp', city: 'Denpasar', province: 'Bali', country: 'Indonesia'},
+            {key: 'jp', city: 'Jakarta Pusat', province: 'DKI Jakarta', country: 'Indonesia'},
+            {key: 'jb', city: 'Jakarta Barat', province: 'DKI Jakarta', country: 'Indonesia'},
+            {key: 'jt', city: 'Jakarta Timur', province: 'DKI Jakarta', country: 'Indonesia'},
+            {key: 'js', city: 'Jakarta Selatan', province: 'DKI Jakarta', country: 'Indonesia'},
+            {key: 'ju', city: 'Jakarta Utara', province: 'DKI Jakarta', country: 'Indonesia'},
+            {key: 'kw', city: 'Karawang', province: 'Jawa Barat', country: 'Indonesia'},
+            {key: 'kt', city: 'Kuta', province: 'Bali', country: 'Indonesia'},
+            {key: 'mk', city: 'Makassar', province: 'Sulawesi Selatan', country: 'Indonesia'},
+            {key: 'ml', city: 'Malang', province: 'Jawa Timur', country: 'Indonesia'},
+            {key: 'mn', city: 'Manado', province: 'Sulawesi Utara', country: 'Indonesia'},
+            {key: 'pt', city: 'Pontianak', province: 'Kalimantan Barat', country: 'Indonesia'},
+            {key: 'sb', city: 'Surabaya', province: 'Jawa Timur', country: 'Indonesia'},
+            {key: 'ts', city: 'Tasikmalaya', province: 'Jawa Barat', country: 'Indonesia'},
+            {key: 'tg', city: 'Tangerang', province: 'Banten', country: 'Indonesia'},
+            {key: 'yg', city: 'Yogyakarta', province: 'D.I Yogyakarta', country: 'Indonesia'},
+        ];
+
+
+
+        $scope.sclinebusiness = [     // line Business
+            {key: 'B1', line_business: 'BAKERY'},
+            {key: 'B2', line_business: 'BUILDING CONTRACTOR'},
+            {key: 'B3', line_business: 'CAFE'},
+            {key: 'B4', line_business: 'CAKE'},
+            {key: 'B5', line_business: 'CARGO'},
+            {key: 'B6', line_business: 'COTTAGE'},
+            {key: 'B7', line_business: 'DEVELOPER'},
+            {key: 'B8', line_business: 'DISTRIBUTOR'},
+            {key: 'B9', line_business: 'FOOD SUPPLY'},
+            {key: 'B10', line_business: 'GAS COMPANIES'},
+            {key: 'B11', line_business: 'GAS EQUIPMENT SUPPLY'},
+            {key: 'B12', line_business: 'GAS EXPLORATION'},
+            {key: 'B13', line_business: 'GAS MATERIAL SUPPLY'},
+            {key: 'B14', line_business: 'GAS PROCESSING'},
+            {key: 'B15', line_business: 'GENERAL TRADING'},
+            {key: 'B16', line_business: 'GOVERNMENT'},
+            {key: 'B17', line_business: 'HOTEL'},
+            {key: 'B18', line_business: 'IMPORT'},
+            {key: 'B19', line_business: 'INSURANCE'},
+            {key: 'B20', line_business: 'LIGHTNING'},
+            {key: 'B21', line_business: 'MARKETING'},
+            {key: 'B22', line_business: 'MEDICAL SERVICES'},
+            {key: 'B23', line_business: 'MINING COMPANIES'},
+            {key: 'B24', line_business: 'MINING SERVICES COMPANIES'},
+            {key: 'B25', line_business: 'MINING SUPPLY COMPANIES'},
+            {key: 'B26', line_business: 'MOULD & DIE'},
+            {key: 'B27', line_business: 'OFFSHORE FLOATING'},
+            {key: 'B28', line_business: 'OFFSHORE PLATFORM'},
+            {key: 'B29', line_business: 'OIL AND GAS COMPANIES'},
+            {key: 'B30', line_business: 'OIL AND GAS CONSULTANT'},
+            {key: 'B31', line_business: 'OILFIELD'},
+            {key: 'B32', line_business: 'OTHERS'},
+            {key: 'B33', line_business: 'PLASTIC'},
+            {key: 'B34', line_business: 'PRINTING'},
+            {key: 'B35', line_business: 'REPAIR SERVICES'},
+            {key: 'B36', line_business: 'RESORT'},
+            {key: 'B37', line_business: 'RESTAURANT'},
+            {key: 'B38', line_business: 'STORAGE'},
+            {key: 'B39', line_business: 'SUPERMARKET'},
+            {key: 'B40', line_business: 'SUPPLIER'},
+            {key: 'B41', line_business: 'TOURISM'},
+            {key: 'B42', line_business: 'TRANSPORT'},
+            {key: 'B43', line_business: 'WELDING'},
+            {key: 'B44', line_business: 'WHOLESALER'},
+            {key: 'B45', line_business: 'WOODWORKING'},
+
+        ];
+
     }]
  );
