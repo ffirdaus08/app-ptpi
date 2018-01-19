@@ -434,8 +434,8 @@ angular.module('baseApp').controller('customerController', ['$http', '$scope',
 
         $scope.scjob = [     // region
             {key: 'adm', title: 'Administration Manager', eselon: '2', title_category: 'ADMINISTRATION'},
-            {key: 'am', title: 'Assistant Manager', eselon: '', title_category: 'ASSISTANT MANAGER'},
-            {key: 'ar', title: 'Architect', eselon: '', title_category: 'ARCHITECT/DRAFTMAN/DESIGNER'},
+            {key: 'am', title: 'Assistant Manager', eselon: '3', title_category: 'ASSISTANT MANAGER'},
+            {key: 'ar', title: 'Architect', eselon: '3', title_category: 'ARCHITECT/DRAFTMAN/DESIGNER'},
             {key: 'bd', title: 'Business Development', eselon: '3', title_category: 'RESEARCH/DEVELOPMENT'},
             {key: 'bdm', title: 'Business Development Manager', eselon: '2', title_category: 'RESEARCH/DEVELOPMENT'},
             {key: 'd', title: 'Director', eselon: '1', title_category: 'CORPORATE MANAGEMENT'},

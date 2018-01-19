@@ -2,5 +2,152 @@
 {% block content %}
 <!--<script src="{{ url_for('static', filename='js/diary.js') }}"></script>-->
 <h3>PTPI DATA ENTRY PROJECT</h3>
+<h4>Welcome</h4>
+<br>
+<p>Ini adalah web aplikasi project data entry PT PAMERINDO INDONESIA</p>
+    <br>
+Berikut cara melakukan data entry : <br>
+<ol>
+    <li>Cari nama perusahaan, Jika belum ada perusahaan </li>
+</ol>
 
+<ul>
+    <li>Jika belum ada klik kolom "company"</li>
+    <li>lalu klik "New Company" lalu input informasi perusahaan </li>
+</ul>
+
+<ol start="2">
+    <li>Setelah itu masuk ke kolom customer </li>
+</ol>
+
+<ul>
+    <li>Saat di kolom "Customer" klik "New Customer" untuk membuat customer baru</li>
+    <li>Setelah itu isi informasi customer baru dan klik tombol "save" dan tampilan akan kembali ke awal </li>
+</ul>
+
+<ol start="3">
+    <li>Setelah itu masukan detail kuisoner </li>
+</ol>
+
+<ul>
+    <li>Kembali ke kolom "Customer" lalu klik "detail" pada customer yang baru</li>
+    <li>Setelah itu akan muncul button "add event"</li>
+    <li>Isi informasi kuisoner setelah itu "save"</li>
+</ul>
+
+<ol start="4">
+    <li>Jika sudah ada customer dan company lakukan langkah 3 saja </li>
+</ol>
+
+<p>CONTOH PENGETIKAN</p>
+<table>
+    <th>Kolom</th>
+    <th>BENAR</th>
+    <th>SALAH</th>
+
+    <tr>
+        <td rowspan="7">Nama Company</td>
+        <td rowspan="3">PAMERINDO BUANA ABADI PT</td>
+        <td>PT PAMERINDO BUANA ABADI</td>
+    </tr>
+
+    <tr>
+        <td>PAMERINDO BUANA ABADI, PT</td>
+    </tr>
+
+    <tr>
+        <td>PAMERINDO BUANA ABADI PT.</td>
+    </tr>
+
+    <tr>
+        <td>SINAR BAHAGIA CV</td>
+        <td>CV SINAR BAHAGIA</td>
+    </tr>
+
+    <tr>
+        <td>SARI PAN PACIFIC HOTEL</td>
+        <td>HOTEL SARI PAN PACIFIC</td>
+    </tr>
+
+    <tr>
+        <td>BAHAGIA TOKO</td>
+        <td>TOKO BAHAGIA</td>
+    </tr>
+
+    <tr>
+        <td>JASA BOGA CATERING</td>
+        <td>CATERING JASA BOGA</td>
+    </tr>
+
+    <tr>
+        <td>Nama Customer</td>
+        <td>Maya Rosita</td>
+        <td>MAYA ROSITA</td>
+    </tr>
+
+    <tr>
+        <td>Jabatan/Title Job</td>
+        <td>Marketing Manager</td>
+        <td>MARKETING MANAGER</td>
+    </tr>
+
+    <tr>
+        <td>Kota</td>
+        <td>Jakarta</td>
+        <td>JAKARTA</td>
+    </tr>
+
+    <tr>
+        <td>Negara</td>
+        <td>Indonesia</td>
+        <td>INDONESIA</td>
+    </tr>
+</table>
+
+<table>
+    <th>ESSELON 1</th>
+    <th>ESSELON 2</th>
+    <th>ESSELON 3</th>
+    <th>ESSELON 4</th>
+    <th>ESSELON 5</th>
+
+    <tr>
+        <td>CHAIRMAN</td>
+        <td>MANAGER</td>
+        <td>MARKETING</td>
+        <td>STAFF(GENERAL)</td>
+        <td>UNKNOWN(EMPTY)</td>
+    </tr>
+
+     <tr>
+        <td>DIRECTOR</td>
+        <td rowspan="4">HEAD OF DEPARTEMENT</td>
+        <td>SALES</td>
+    </tr>
+
+    <tr>
+        <td>OWNER</td>
+        <td>ENGINEER</td>
+    </tr>
+
+    <tr>
+        <td>PARTNER</td>
+        <td>TECHNICAL</td>
+    </tr>
+
+    <tr>
+        <td>GENERAL MANAGER</td>
+        <td>PURCHASING</td>
+    </tr>
+</table>
+<br>
+
+<p>Untuk Penulisan Shortcut menggunakan key "enter"<br>berikut kolom yang menggunakan shorcut:</p>
+<ul>
+    <li>Pada pembuatan company kolom "city" menggunakan huruf kecil seperti "js" untuk "Jakarta Selatan"</li>
+    <li>dan kolom line business menggukan awalan "B" kapital seperti "B1" untuk "BAKERY"</li>
+    <li>Pada halaman customer kolom Title Job menggunakan huruf kecil seperti "adm" untuk "Administration Manager"</li>
+    <li>masih di halaman customer kolom "title category" bisa di isi dengan nomor "1" untuk ACCOUNTING</li>
+
+</ul>
 {% endblock %}
