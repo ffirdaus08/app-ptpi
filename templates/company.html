@@ -11,26 +11,6 @@
         <br/>
         <br/>
 
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Line Business</th>
-                <th>City</th>
-                <th>Phone</th>
-                <th>Detail</th>
-            </tr>
-            <tr ng-repeat="row in companies">
-                <td ng-bind="row.id"></td>
-                <td ng-bind="row.name"></td>
-                <td ng-bind="row.line_business"></td>
-                <td ng-bind="row.city"></td>
-                <td ng-bind="row.phone"></td>
-                <td><a href="#" ng-click="detail($index)">Detail</a></td>
-            </tr>
-
-        </table>
-        <br/>
 
         <div id="pn-input">
             <p>
@@ -103,6 +83,27 @@
                 <button type="button" ng-click="clear()">Cancel</button>
             </p>
         </div>
+
+         <table>
+            <tr>
+
+                <th>Name</th>
+                <th>Line Business</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Detail</th>
+            </tr>
+            <tr ng-repeat="row in companies">
+
+                <td ng-bind="row.name"></td>
+                <td ng-bind="row.line_business"></td>
+                <td ng-bind="row.city"></td>
+                <td ng-bind="row.phone"></td>
+                <td><a href="#" ng-click="detail($index)">Detail</a></td>
+            </tr>
+
+        </table>
+        <br/>
 
     </fieldset>
 </form>

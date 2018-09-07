@@ -11,26 +11,7 @@
         <br/>
         <br/>
 
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>title</th>
-                <th>Company</th>
-                <th>Mobilephone</th>
-                <th>Detail</th>
-            </tr>
-            {% raw %}
-            <tr ng-repeat="row in customers">
-                <td ng-bind="row.name"></td>
-                <td ng-bind="row.title"></td>
-                <td ng-bind="getCompanyById(row.company_id)"></td>
-                <td ng-bind="row.mobile_phone"></td>
-                <td><a href="#" ng-click="detail($index)">Detail</a></td>
-            </tr>
-            {% endraw %}
 
-        </table>
-        <br/>
 
         <div id="pn-input">
 
@@ -135,5 +116,27 @@
         </div>
 
     </div>
+
+     <table>
+            <tr>
+                <th>Name</th>
+                <th>title</th>
+                <th>Company</th>
+                <th>Mobilephone</th>
+                <th>Detail</th>
+            </tr>
+            {% raw %}
+            <tr ng-repeat="row in customers">
+                <td ng-bind="row.name"></td>
+                <td ng-bind="row.title"></td>
+                <td ng-bind="getCompanyById(row.company_id)"></td>
+                <td ng-bind="row.mobile_phone"></td>
+                <td><a href="#" ng-click="detail($index)">Detail</a></td>
+            </tr>
+            {% endraw %}
+
+        </table>
+        <br/>
+
 </form>
 {% endblock %}
